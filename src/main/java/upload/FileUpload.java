@@ -47,16 +47,16 @@ public class FileUpload {
 			
 			mp.put("RequestId"+count, request);
 			System.out.println(mp);
+			sendemail(mp);
 			count++;
 			
 		}
 		
-		email(mp);
 		driver.quit();
 
 	}
 
-	private static void email(Map<String, ArrayList<String>> mp) {
+	private static void sendemail(Map<String, ArrayList<String>> mp) {
 		for (Entry<String, ArrayList<String>> entry : mp.entrySet()) {
 			System.out.println(entry.getKey() +"_"+entry.getValue()); 
 		} 
